@@ -1,16 +1,25 @@
-import { useEffect, useState } from "react";
 
-function Movie() {
+import React from 'react';
+import { useParams } from 'react-router-dom';
+
+const Movie = () => {
+  const { id } = useParams();
+
+
+  const movie = {
+    id: 1,
+    title: 'Movie Title',
+    time: '2h 30min',
+    genres: ['Action', 'Adventure', 'Sci-Fi']
+  };
+
   return (
-    <>
-      <header>
-        {/* What component should go here? */}
-      </header>
-      <main>
-        {/* Movie info here! */}
-      </main>
-    </>
+    <div>
+      <h1>{movie.title}</h1>
+      <p>Time: {movie.time}</p>
+      <p>Genres: {movie.genres.join(', ')}</p>
+    </div>
   );
-};
+}
 
 export default Movie;
